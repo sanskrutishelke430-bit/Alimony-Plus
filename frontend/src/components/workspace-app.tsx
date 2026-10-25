@@ -45,6 +45,7 @@ import {
   LoginView,
   SettingsView,
 } from "./workspace-extras";
+import { SettlementStudio } from "./settlement-studio";
 
 const nav = [
   { id: "dashboard", title: "Overview", icon: LayoutDashboard },
@@ -53,6 +54,7 @@ const nav = [
   { id: "payments", title: "Maintenance", icon: Wallet },
   { id: "documents", title: "Documents", icon: Files },
   { id: "calculator", title: "Planning calculator", icon: Calculator },
+  { id: "settlement-studio", title: "Settlement studio", icon: SlidersHorizontal },
 ];
 const pageTitles: Record<string, string> = {
   dashboard: "Overview",
@@ -63,6 +65,7 @@ const pageTitles: Record<string, string> = {
   calculator: "Planning calculator",
   "data-review": "Data workspace",
   help: "Help & legal aid",
+  "settlement-studio": "Settlement studio",
   settings: "Settings",
 };
 
@@ -1192,6 +1195,7 @@ export function WorkspaceApp({ section }: { section: string }) {
               }}
             />
           )}
+          {section === "settlement-studio" && <SettlementStudio />}
           {section === "help" && <HelpView />}
           {section === "settings" && <SettingsView />}
           <footer className="footer">
