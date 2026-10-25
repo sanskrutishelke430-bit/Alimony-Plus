@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import * as Slider from "@radix-ui/react-slider";
+import { SettlementCharts } from "./settlement-charts";
 import {
   DEFAULT_INPUT,
   RULES,
@@ -205,6 +206,8 @@ export function SettlementStudio() {
           </div>
         </section>
       </div>
+
+      {checked.ok && <SettlementCharts input={checked.data} />}
 
       <section aria-labelledby="cmp-title" className="space-y-2">
         <h2 id="cmp-title" className="text-xl font-semibold">Scenario comparison</h2>
